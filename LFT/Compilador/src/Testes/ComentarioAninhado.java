@@ -4,6 +4,8 @@ import lexer.Lexer;
 import node.TComment;
 import node.TCommentEnd;
 
+
+//Esta classe foi retirada da documentação do sablecc.
 public class ComentarioAninhado extends Lexer{
 	
 	private int count;
