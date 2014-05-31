@@ -21,7 +21,6 @@ Este projeto foi feito para fins de avaliação do aluno no curso.
 O objetivo é criar um compilador com base em uma linguagem portugol.
 
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;Testando o Lexico;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 Para testar o Léxico. É necessário que você tenha o compilador da linguagem java 
@@ -36,3 +35,7 @@ Eclipse instalado em seu pc.
 
 ->Na package "testes", compile a classe "TesteLexico" .
  
+obs:
+-A gramatica oficial se encontra dentro da pasta "LFT".
+-A classe "ComentarioAninhado", encontrada na Package "TesteLexico" é uma classe que 
+extende o lexico e serve para poder simular os comentatios aninhados.
