@@ -10,8 +10,8 @@ Compilador Portugol
 \\\\Desenvolvedores:                                              /////
 \\\\                Carlos Alberto Santos de Souza                /////
 \\\\                e-mail: carlos.albertoufs@gmail.com           /////
-\\\\                 Samir Dantas Oliveira                        /////
-\\\\                        samir.ufs@hotmail.com                 /////
+\\\\                Samir Dantas Oliveira                         /////
+\\\\                e-mail: samir.ufs@hotmail.com                 /////
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////////////
 
 
