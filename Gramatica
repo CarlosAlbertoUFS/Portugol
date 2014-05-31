@@ -1,11 +1,11 @@
 /*****************************************************************************************
-* Copyright (c) 2014, Carlos Alberto Santos de Souza (carlos.albertoufs@gmail.com) 
+* Copyright (c) 2014, Carlos Alberto Santos de Souza (carlos.albertoufs@gmail.com) lala
 *                     Samir Dantas Oliveira (samir.ufs@hotmail.com)
 All Rights Reserved.
 *
 ******************************************************************************************/
 
-
+Package org.compiler.portugol;
 
 
 Helpers
@@ -36,18 +36,21 @@ Helpers
 	w = 'w';
 	z = 'z';
 	
+	chave_dir = '{' ;
+	chave_esq = '}' ;
+	colchete_dir = '[';
+	colchete_esq = ']';
+	barra = '/';
+	contra_barra = '\';
+	asterisco = '*';
 	
-	ascii_char = [0x0 .. 0x7f] ; //toda a tabela ascii
+	sublinhado = '_' ;
+	barraou = '|' ;
+	ascii_char = [0x0 .. 0x7f] ; //define qual parte da tabela ascii usar
 	
 	letra = ['a' .. 'z'] ;
 	letra_m = ['A' .. 'Z'] ;
 	digito = ['0' .. '9'] ;
-	
-	menos = '-';
-	barra = '/';
-	sublinhado = '_' ;
-	numero = digito+ ;
-	virgula = ',';
 	
 	//caracteres não imprimiveis
 	tab = 9 ;
@@ -55,14 +58,11 @@ Helpers
 	lf = 10 ;
 	blank = ' ' ;
 	
-	States
-	normal,
-	comment;
-	
 	Tokens
 	//palavras reservadas
 	programa = 'programa' ;
 	inicio = 'inicio' ;
+	//fim. = ('fim')blanks*'.' ;
 	fim = 'fim' ;
 	faca = 'faca' ;
 	ate = 'ate' ;
@@ -83,26 +83,21 @@ Helpers
 	fim_enquanto = 'fim enquanto' ;
 	fim_para = 'fim para' ;
 	fim_repita = 'fim repita' ;
-	retorne = 'retorne';
 	
-	//Tipos
 	caracter = 'caracter' ;
 	inteiro = 'inteiro' ;
 	logico = 'logico' ;
-	real = 'real';
 	falso = 'falso' ;
 	verdade = 'verdade' ;
 	
 	interrompa = 'interrompa' ; //break em java
-	
-	
 	nao = 'nao' ;
 	ou = 'ou' ;
 	procedimento = 'procedimento' ;
 	xou = 'xou' ;
 	e = 'e' ;
 	vetor = 'vetor' ;
-	constante = 'constante' ;
+	const = 'const' ;
 	
 	
 	//símbolos aritméticos
@@ -131,38 +126,20 @@ Helpers
 	ponto = '.' ;
 	parentese_dir = '(';
 	parentese_esq = ')';
-	chave_dir = '{' ;
-	chave_esq = '}' ;
-	colchete_dir = '[';
-	colchete_esq = ']';
-	barra = '/';
-	contra_barra = '\';
-	asterisco = '*';
-	apostrof = ''';
-	sublinhado = '_' ;
 	
+	//definicao identificadores
+	//identificador = (letra | sublinhado) + (letra | letra_m | digito | sublinhado)*;
+	identificador = [letra | sublinhado] + (letra | letra_m | digito | sublinhado)*;
 	
 	//numeros
 	numero = digito+ ;
-	n_int = menos* numero;
-	n_real = menos* numero virgula numero;
 	
-    //comentários
+	//comentários
 	comentario = barra barra [ascii_char -[cr + lf]]*;
 	
-	//comentatios aninhados
-	{normal} blanks = (blank | cr lf | cr | lf | tab)* ;
-	{normal} identificador = (letra |letra_m | sublinhado)+ (letra | letra_m | digito | sublinhado)*;
 	
-	{normal->comment, comment}
-	comment = '/*';
-
-    {comment} comment_end = '*/';
-	{comment} comment_body = [ascii_char - ['*' + '/']]*;
-	{comment} star = '*';
-	{comment} slash = '/';
-
-
-	
-	Ignored Tokens
-	    comentario, blanks;
+	  //em branco
+	  blanks = blank | cr lf | cr | lf | tab ;
+	  
+	  Ignored Tokens
+	    comentario, blanks ;
