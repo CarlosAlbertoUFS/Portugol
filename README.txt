@@ -27,10 +27,12 @@ O objetivo é criar um compilador com base em uma linguagem portugol.
 Para testar o Léxico. É necessário que você tenha o compilador da linguagem java 
 Eclipse instalado em seu pc.
 
-->Importe a pasta que se encontra dentro da pasta "LFT" para o Eclipse, denominada
-"Compilador".
+-> Baixe a pasta "LFT" do repositorio: https://github.com/CarlosAlbertoUFS/Portugol 
 
 ->Abra o eclipse.
+
+->Importe a pasta que se encontra dentro da pasta "LFT" para o Eclipse, denominada
+"Compilador".
 
 ->Na package "testes", compile a classe "TesteLexico" .
  
